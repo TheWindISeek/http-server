@@ -114,6 +114,7 @@ void HttpServer::Listen() {
     active = true;
     client_data = new EventData();
     client_data->fd = client_fd;
+    this->UpdateResources();
     control_epoll_event(worker_epoll_fd_[current_worker], EPOLL_CTL_ADD,
                         client_fd, EPOLLIN, client_data);
     current_worker++;

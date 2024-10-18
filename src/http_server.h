@@ -7,6 +7,7 @@
 #include <sys/epoll.h>
 #include <sys/socket.h>
 #include <sys/types.h>
+#include <sys/stat.h>
 
 #include <chrono>
 #include <functional>
@@ -15,6 +16,10 @@
 #include <string>
 #include <thread>
 #include <utility>
+#include <iostream>
+#include <fstream>
+#include <dirent.h>  // 提供 opendir, readdir, closedir
+#include <cstring>  // 提供 strlen
 
 #include "http_message.h"
 #include "uri.h"
@@ -62,6 +67,57 @@ class HttpServer {
                                   const HttpRequestHandler_t callback) {
     request_handlers_[uri].insert(std::make_pair(method, std::move(callback)));
   }
+  void UpdateResources(const char* dirPath = "../html", const std::string& default_page = "/main.html") {
+    request_handlers_.clear();
+    // char dirPath[] = "../html";
+    DIR *dir = opendir(dirPath);
+    if(dir == NULL) {
+      perror("dir is null!\n");
+      exit(-1);
+    }
+
+    std::vector<std::string> html_filenames;
+    getFilesInDirectory(dir, dirPath, html_filenames);
+    for(auto filename : html_filenames) {
+      auto get_html = [filename](const HttpRequest& request) -> HttpResponse {
+        HttpResponse response(HttpStatusCode::Ok);
+        std::string context = "";
+
+        std::cout << filename << std::endl;
+        std::ifstream inputFile(filename);
+
+        if (!inputFile.is_open()) {
+            std::cerr << "Failed to open file." << std::endl;
+            response.SetStatusCode(HttpStatusCode::NotFound);
+        } else {
+          std::string line;
+          while (std::getline(inputFile, line)) {
+              // std::cout << line << std::endl;
+              context += line + '\n';
+          }
+
+          inputFile.close();        
+        }
+
+        response.SetHeader("Content-Type", "text/html");
+        response.SetContent(context);
+        return response;
+      };
+      auto it = filename.rfind("/");
+      if(it == filename.length()) {
+        std::cerr << "error: split " << filename << std::endl; 
+        exit(-1);
+      } 
+      std::cout << filename.substr(it) << std::endl;
+      this->RegisterHttpRequestHandler(filename.substr(it), HttpMethod::HEAD, get_html);
+      this->RegisterHttpRequestHandler(filename.substr(it), HttpMethod::GET, get_html);
+      if(filename.substr(it) == default_page) {
+        std::cout << "default page " << default_page << std::endl;
+        this->RegisterHttpRequestHandler("/", HttpMethod::HEAD, get_html);
+        this->RegisterHttpRequestHandler("/", HttpMethod::GET, get_html);
+      }
+    }
+  }
 
   std::string host() const { return host_; }
   std::uint16_t port() const { return port_; }
@@ -95,6 +151,42 @@ class HttpServer {
 
   void control_epoll_event(int epoll_fd, int op, int fd,
                            std::uint32_t events = 0, void* data = nullptr);
+
+      void getFilesInDirectory(DIR *dirp, const char *baseDir, std::vector<std::string> &html_filenames) {
+        // assert(dirp != NULL);
+
+        struct dirent *entry;
+        while ((entry = readdir(dirp)) != NULL) {
+            // 跳过 "." 和 ".."
+            if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
+                continue;
+            }
+
+            char fullPath[PATH_MAX];
+            snprintf(fullPath, PATH_MAX, "%s/%s", baseDir, entry->d_name);
+
+            struct stat statbuf;
+            if (stat(fullPath, &statbuf) == 0) {
+                if (S_ISDIR(statbuf.st_mode)) {
+                    // 如果是目录，则递归遍历
+                    DIR *subDir = opendir(fullPath);
+                    if (subDir) {
+                        printf("Directory: %s\n", fullPath);
+                        getFilesInDirectory(subDir, fullPath, html_filenames);
+                        closedir(subDir);
+                    } else {
+                        perror("opendir");
+                    }
+                } else {
+                    // 如果是文件，则打印文件名
+                    html_filenames.push_back(fullPath);
+                    // printf("File: %s\n", fullPath);
+                }
+            } else {
+                perror("stat");
+            }
+        }
+    }
 };
 
 }  // namespace simple_http_server
