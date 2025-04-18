@@ -1,0 +1,236 @@
+digraph "main" {  
+node [shape="rect"];  
+"111669149724" [label = <METHOD, 48<BR/>main> ]
+"115964117034" [label = <PARAM, 48<BR/>void> ]
+"25769803891" [label = <BLOCK, 48<BR/>{ std::string host = &quot;0.0.0.0&quot;; int port = ...> ]
+"94489280620" [label = <LOCAL, 49<BR/>std::string host: std.string> ]
+"30064771603" [label = <&lt;operator&gt;.assignment, 49<BR/>host = &quot;0.0.0.0&quot;> ]
+"68719477219" [label = <IDENTIFIER, 49<BR/>host<BR/>host = &quot;0.0.0.0&quot;> ]
+"90194313333" [label = <LITERAL, 49<BR/>&quot;0.0.0.0&quot;<BR/>host = &quot;0.0.0.0&quot;> ]
+"94489280621" [label = <LOCAL, 50<BR/>int port: int> ]
+"30064771604" [label = <&lt;operator&gt;.assignment, 50<BR/>port = 8080> ]
+"68719477220" [label = <IDENTIFIER, 50<BR/>port<BR/>port = 8080> ]
+"90194313334" [label = <LITERAL, 50<BR/>8080<BR/>port = 8080> ]
+"94489280622" [label = <LOCAL, 51<BR/>const std::string default_page: std.string> ]
+"30064771605" [label = <&lt;operator&gt;.assignment, 51<BR/>default_page = &quot;/main.html&quot;> ]
+"68719477221" [label = <IDENTIFIER, 51<BR/>default_page<BR/>default_page = &quot;/main.html&quot;> ]
+"90194313335" [label = <LITERAL, 51<BR/>&quot;/main.html&quot;<BR/>default_page = &quot;/main.html&quot;> ]
+"94489280623" [label = <LOCAL, 52<BR/>HttpServer server: simple_http_server.HttpServer> ]
+"30064771606" [label = <&lt;operator&gt;.assignment, 52<BR/>server = simple_http_server.HttpServer(host, port)> ]
+"68719477222" [label = <IDENTIFIER, 52<BR/>server<BR/>server = simple_http_server.HttpServer(host, port)> ]
+"30064771607" [label = <&lt;operator&gt;.constructorInitializer, 52<BR/>(host, port)> ]
+"68719477223" [label = <IDENTIFIER, 52<BR/>host<BR/>(host, port)> ]
+"68719477224" [label = <IDENTIFIER, 52<BR/>port<BR/>(host, port)> ]
+"30064771608" [label = <UpdateResources, 79<BR/>server.UpdateResources()> ]
+"68719477225" [label = <IDENTIFIER, 79<BR/>server<BR/>server.UpdateResources()> ]
+"47244640355" [label = <CONTROL_STRUCTURE, 131<BR/>TRY<BR/>try> ]
+"25769803892" [label = <BLOCK, 131<BR/>{ // std::cout &lt;&lt; &quot;Setting new limits for f...> ]
+"30064771609" [label = <&lt;operator&gt;.shiftLeft, 138<BR/>std::cout &lt;&lt; &quot;Starting the web server..&quot; &lt;&lt; std...> ]
+"30064771610" [label = <&lt;operator&gt;.shiftLeft, 138<BR/>std::cout &lt;&lt; &quot;Starting the web server..&quot;> ]
+"30064771611" [label = <&lt;operator&gt;.fieldAccess, 138<BR/>std::cout> ]
+"68719477226" [label = <IDENTIFIER, 138<BR/>std<BR/>std::cout &lt;&lt; &quot;Starting the web server..&quot;> ]
+"55834574981" [label = <FIELD_IDENTIFIER, 138<BR/>cout> ]
+"90194313336" [label = <LITERAL, 138<BR/>&quot;Starting the web server..&quot;<BR/>std::cout &lt;&lt; &quot;Starting the web server..&quot;> ]
+"30064771612" [label = <&lt;operator&gt;.fieldAccess, 138<BR/>std::endl> ]
+"68719477227" [label = <IDENTIFIER, 138<BR/>std<BR/>std::cout &lt;&lt; &quot;Starting the web server..&quot; &lt;&lt; std...> ]
+"55834574982" [label = <FIELD_IDENTIFIER, 138<BR/>endl> ]
+"30064771613" [label = <Start, 139<BR/>server.Start()> ]
+"68719477228" [label = <IDENTIFIER, 139<BR/>server<BR/>server.Start()> ]
+"30064771614" [label = <&lt;operator&gt;.shiftLeft, 140<BR/>std::cout &lt;&lt; &quot;Server listening on &quot; &lt;&lt; host &lt;&lt; ...> ]
+"30064771615" [label = <&lt;operator&gt;.shiftLeft, 140<BR/>std::cout &lt;&lt; &quot;Server listening on &quot; &lt;&lt; host &lt;&lt; ...> ]
+"30064771616" [label = <&lt;operator&gt;.shiftLeft, 140<BR/>std::cout &lt;&lt; &quot;Server listening on &quot; &lt;&lt; host &lt;&lt; &quot;:&quot;> ]
+"30064771617" [label = <&lt;operator&gt;.shiftLeft, 140<BR/>std::cout &lt;&lt; &quot;Server listening on &quot; &lt;&lt; host> ]
+"30064771618" [label = <&lt;operator&gt;.shiftLeft, 140<BR/>std::cout &lt;&lt; &quot;Server listening on &quot;> ]
+"30064771619" [label = <&lt;operator&gt;.fieldAccess, 140<BR/>std::cout> ]
+"68719477229" [label = <IDENTIFIER, 140<BR/>std<BR/>std::cout &lt;&lt; &quot;Server listening on &quot;> ]
+"55834574983" [label = <FIELD_IDENTIFIER, 140<BR/>cout> ]
+"90194313337" [label = <LITERAL, 140<BR/>&quot;Server listening on &quot;<BR/>std::cout &lt;&lt; &quot;Server listening on &quot;> ]
+"68719477230" [label = <IDENTIFIER, 140<BR/>host<BR/>std::cout &lt;&lt; &quot;Server listening on &quot; &lt;&lt; host> ]
+"90194313338" [label = <LITERAL, 140<BR/>&quot;:&quot;<BR/>std::cout &lt;&lt; &quot;Server listening on &quot; &lt;&lt; host &lt;&lt; &quot;:&quot;> ]
+"68719477231" [label = <IDENTIFIER, 140<BR/>port<BR/>std::cout &lt;&lt; &quot;Server listening on &quot; &lt;&lt; host &lt;&lt; ...> ]
+"30064771620" [label = <&lt;operator&gt;.fieldAccess, 140<BR/>std::endl> ]
+"68719477232" [label = <IDENTIFIER, 140<BR/>std<BR/>std::cout &lt;&lt; &quot;Server listening on &quot; &lt;&lt; host &lt;&lt; ...> ]
+"55834574984" [label = <FIELD_IDENTIFIER, 140<BR/>endl> ]
+"30064771621" [label = <&lt;operator&gt;.shiftLeft, 142<BR/>std::cout &lt;&lt; &quot;Enter [quit] to stop the server&quot; ...> ]
+"30064771622" [label = <&lt;operator&gt;.shiftLeft, 142<BR/>std::cout &lt;&lt; &quot;Enter [quit] to stop the server&quot;> ]
+"30064771623" [label = <&lt;operator&gt;.fieldAccess, 142<BR/>std::cout> ]
+"68719477233" [label = <IDENTIFIER, 142<BR/>std<BR/>std::cout &lt;&lt; &quot;Enter [quit] to stop the server&quot;> ]
+"55834574985" [label = <FIELD_IDENTIFIER, 142<BR/>cout> ]
+"90194313339" [label = <LITERAL, 142<BR/>&quot;Enter [quit] to stop the server&quot;<BR/>std::cout &lt;&lt; &quot;Enter [quit] to stop the server&quot;> ]
+"30064771624" [label = <&lt;operator&gt;.fieldAccess, 142<BR/>std::endl> ]
+"68719477234" [label = <IDENTIFIER, 142<BR/>std<BR/>std::cout &lt;&lt; &quot;Enter [quit] to stop the server&quot; ...> ]
+"55834574986" [label = <FIELD_IDENTIFIER, 142<BR/>endl> ]
+"94489280624" [label = <LOCAL, 143<BR/>std::string command: std.string> ]
+"47244640356" [label = <CONTROL_STRUCTURE, 144<BR/>WHILE<BR/>while (std::cin &gt;&gt; command, command != &quot;quit&quot;)> ]
+"25769803893" [label = <BLOCK, 144<BR/>&lt;empty&gt;> ]
+"30064771625" [label = <&lt;operator&gt;.arithmeticShiftRight, 144<BR/>std::cin &gt;&gt; command> ]
+"30064771626" [label = <&lt;operator&gt;.fieldAccess, 144<BR/>std::cin> ]
+"68719477235" [label = <IDENTIFIER, 144<BR/>std<BR/>std::cin &gt;&gt; command> ]
+"55834574987" [label = <FIELD_IDENTIFIER, 144<BR/>cin> ]
+"68719477236" [label = <IDENTIFIER, 144<BR/>command<BR/>std::cin &gt;&gt; command> ]
+"30064771627" [label = <&lt;operator&gt;.notEquals, 144<BR/>command != &quot;quit&quot;> ]
+"68719477237" [label = <IDENTIFIER, 144<BR/>command<BR/>command != &quot;quit&quot;> ]
+"90194313340" [label = <LITERAL, 144<BR/>&quot;quit&quot;<BR/>command != &quot;quit&quot;> ]
+"25769803894" [label = <BLOCK, 144<BR/>{ std::this_thread::sleep_for(std::chrono...> ]
+"30064771628" [label = <sleep_for, 145<BR/>std::this_thread::sleep_for(std::chrono::millis...> ]
+"30064771629" [label = <milliseconds, 145<BR/>std::chrono::milliseconds(100)> ]
+"90194313341" [label = <LITERAL, 145<BR/>100<BR/>std::chrono::milliseconds(100)> ]
+"30064771630" [label = <&lt;operator&gt;.shiftLeft, 147<BR/>std::cout &lt;&lt; &quot;'quit' command entered. Stopping ...> ]
+"30064771631" [label = <&lt;operator&gt;.shiftLeft, 147<BR/>std::cout &lt;&lt; &quot;'quit' command entered. Stopping ...> ]
+"30064771632" [label = <&lt;operator&gt;.fieldAccess, 147<BR/>std::cout> ]
+"68719477238" [label = <IDENTIFIER, 147<BR/>std<BR/>std::cout &lt;&lt; &quot;'quit' command entered. Stopping ...> ]
+"55834574988" [label = <FIELD_IDENTIFIER, 147<BR/>cout> ]
+"90194313342" [label = <LITERAL, 147<BR/>&quot;'quit' command entered. Stopping the web serve...<BR/>std::cout &lt;&lt; &quot;'quit' command entered. Stopping ...> ]
+"30064771633" [label = <&lt;operator&gt;.fieldAccess, 148<BR/>std::endl> ]
+"68719477239" [label = <IDENTIFIER, 148<BR/>std<BR/>std::cout &lt;&lt; &quot;'quit' command entered. Stopping ...> ]
+"55834574989" [label = <FIELD_IDENTIFIER, 148<BR/>endl> ]
+"30064771634" [label = <Stop, 149<BR/>server.Stop()> ]
+"68719477240" [label = <IDENTIFIER, 149<BR/>server<BR/>server.Stop()> ]
+"30064771635" [label = <&lt;operator&gt;.shiftLeft, 150<BR/>std::cout &lt;&lt; &quot;Server stopped&quot; &lt;&lt; std::endl> ]
+"30064771636" [label = <&lt;operator&gt;.shiftLeft, 150<BR/>std::cout &lt;&lt; &quot;Server stopped&quot;> ]
+"30064771637" [label = <&lt;operator&gt;.fieldAccess, 150<BR/>std::cout> ]
+"68719477241" [label = <IDENTIFIER, 150<BR/>std<BR/>std::cout &lt;&lt; &quot;Server stopped&quot;> ]
+"55834574990" [label = <FIELD_IDENTIFIER, 150<BR/>cout> ]
+"90194313343" [label = <LITERAL, 150<BR/>&quot;Server stopped&quot;<BR/>std::cout &lt;&lt; &quot;Server stopped&quot;> ]
+"30064771638" [label = <&lt;operator&gt;.fieldAccess, 150<BR/>std::endl> ]
+"68719477242" [label = <IDENTIFIER, 150<BR/>std<BR/>std::cout &lt;&lt; &quot;Server stopped&quot; &lt;&lt; std::endl> ]
+"55834574991" [label = <FIELD_IDENTIFIER, 150<BR/>endl> ]
+"47244640357" [label = <CONTROL_STRUCTURE, 151<BR/>CATCH<BR/>catch> ]
+"94489280625" [label = <LOCAL, 151<BR/>std::exception &amp; e: std.exception&amp;> ]
+"25769803895" [label = <BLOCK, 151<BR/>{ std::cerr &lt;&lt; &quot;An error occurred: &quot; &lt;&lt; e.w...> ]
+"30064771639" [label = <&lt;operator&gt;.shiftLeft, 152<BR/>std::cerr &lt;&lt; &quot;An error occurred: &quot; &lt;&lt; e.what() ...> ]
+"30064771640" [label = <&lt;operator&gt;.shiftLeft, 152<BR/>std::cerr &lt;&lt; &quot;An error occurred: &quot; &lt;&lt; e.what()> ]
+"30064771641" [label = <&lt;operator&gt;.shiftLeft, 152<BR/>std::cerr &lt;&lt; &quot;An error occurred: &quot;> ]
+"30064771642" [label = <&lt;operator&gt;.fieldAccess, 152<BR/>std::cerr> ]
+"68719477243" [label = <IDENTIFIER, 152<BR/>std<BR/>std::cerr &lt;&lt; &quot;An error occurred: &quot;> ]
+"55834574992" [label = <FIELD_IDENTIFIER, 152<BR/>cerr> ]
+"90194313344" [label = <LITERAL, 152<BR/>&quot;An error occurred: &quot;<BR/>std::cerr &lt;&lt; &quot;An error occurred: &quot;> ]
+"30064771643" [label = <what, 152<BR/>e.what()> ]
+"68719477244" [label = <IDENTIFIER, 152<BR/>e<BR/>e.what()> ]
+"30064771644" [label = <&lt;operator&gt;.fieldAccess, 152<BR/>std::endl> ]
+"68719477245" [label = <IDENTIFIER, 152<BR/>std<BR/>std::cerr &lt;&lt; &quot;An error occurred: &quot; &lt;&lt; e.what() ...> ]
+"55834574993" [label = <FIELD_IDENTIFIER, 152<BR/>endl> ]
+"146028888116" [label = <RETURN, 153<BR/>return -1;> ]
+"30064771645" [label = <&lt;operator&gt;.minus, 153<BR/>-1> ]
+"90194313345" [label = <LITERAL, 153<BR/>1<BR/>-1> ]
+"146028888117" [label = <RETURN, 156<BR/>return 0;> ]
+"90194313346" [label = <LITERAL, 156<BR/>0<BR/>return 0;> ]
+"94489280626" [label = <LOCAL, 138<BR/>std: std> ]
+"128849018907" [label = <METHOD_RETURN, 48<BR/>int> ]
+  "111669149724" -> "115964117034" 
+  "111669149724" -> "25769803891" 
+  "111669149724" -> "128849018907" 
+  "25769803891" -> "94489280626" 
+  "25769803891" -> "94489280620" 
+  "25769803891" -> "30064771603" 
+  "25769803891" -> "94489280621" 
+  "25769803891" -> "30064771604" 
+  "25769803891" -> "94489280622" 
+  "25769803891" -> "30064771605" 
+  "25769803891" -> "94489280623" 
+  "25769803891" -> "30064771606" 
+  "25769803891" -> "30064771608" 
+  "25769803891" -> "47244640355" 
+  "25769803891" -> "146028888117" 
+  "30064771603" -> "68719477219" 
+  "30064771603" -> "90194313333" 
+  "30064771604" -> "68719477220" 
+  "30064771604" -> "90194313334" 
+  "30064771605" -> "68719477221" 
+  "30064771605" -> "90194313335" 
+  "30064771606" -> "68719477222" 
+  "30064771606" -> "30064771607" 
+  "30064771607" -> "68719477223" 
+  "30064771607" -> "68719477224" 
+  "30064771608" -> "68719477225" 
+  "47244640355" -> "25769803892" 
+  "47244640355" -> "47244640357" 
+  "25769803892" -> "30064771609" 
+  "25769803892" -> "30064771613" 
+  "25769803892" -> "30064771614" 
+  "25769803892" -> "30064771621" 
+  "25769803892" -> "94489280624" 
+  "25769803892" -> "47244640356" 
+  "25769803892" -> "30064771630" 
+  "25769803892" -> "30064771634" 
+  "25769803892" -> "30064771635" 
+  "30064771609" -> "30064771610" 
+  "30064771609" -> "30064771612" 
+  "30064771610" -> "30064771611" 
+  "30064771610" -> "90194313336" 
+  "30064771611" -> "68719477226" 
+  "30064771611" -> "55834574981" 
+  "30064771612" -> "68719477227" 
+  "30064771612" -> "55834574982" 
+  "30064771613" -> "68719477228" 
+  "30064771614" -> "30064771615" 
+  "30064771614" -> "30064771620" 
+  "30064771615" -> "30064771616" 
+  "30064771615" -> "68719477231" 
+  "30064771616" -> "30064771617" 
+  "30064771616" -> "90194313338" 
+  "30064771617" -> "30064771618" 
+  "30064771617" -> "68719477230" 
+  "30064771618" -> "30064771619" 
+  "30064771618" -> "90194313337" 
+  "30064771619" -> "68719477229" 
+  "30064771619" -> "55834574983" 
+  "30064771620" -> "68719477232" 
+  "30064771620" -> "55834574984" 
+  "30064771621" -> "30064771622" 
+  "30064771621" -> "30064771624" 
+  "30064771622" -> "30064771623" 
+  "30064771622" -> "90194313339" 
+  "30064771623" -> "68719477233" 
+  "30064771623" -> "55834574985" 
+  "30064771624" -> "68719477234" 
+  "30064771624" -> "55834574986" 
+  "47244640356" -> "25769803893" 
+  "47244640356" -> "25769803894" 
+  "25769803893" -> "30064771625" 
+  "25769803893" -> "30064771627" 
+  "30064771625" -> "30064771626" 
+  "30064771625" -> "68719477236" 
+  "30064771626" -> "68719477235" 
+  "30064771626" -> "55834574987" 
+  "30064771627" -> "68719477237" 
+  "30064771627" -> "90194313340" 
+  "25769803894" -> "30064771628" 
+  "30064771628" -> "30064771629" 
+  "30064771629" -> "90194313341" 
+  "30064771630" -> "30064771631" 
+  "30064771630" -> "30064771633" 
+  "30064771631" -> "30064771632" 
+  "30064771631" -> "90194313342" 
+  "30064771632" -> "68719477238" 
+  "30064771632" -> "55834574988" 
+  "30064771633" -> "68719477239" 
+  "30064771633" -> "55834574989" 
+  "30064771634" -> "68719477240" 
+  "30064771635" -> "30064771636" 
+  "30064771635" -> "30064771638" 
+  "30064771636" -> "30064771637" 
+  "30064771636" -> "90194313343" 
+  "30064771637" -> "68719477241" 
+  "30064771637" -> "55834574990" 
+  "30064771638" -> "68719477242" 
+  "30064771638" -> "55834574991" 
+  "47244640357" -> "94489280625" 
+  "47244640357" -> "25769803895" 
+  "25769803895" -> "30064771639" 
+  "25769803895" -> "146028888116" 
+  "30064771639" -> "30064771640" 
+  "30064771639" -> "30064771644" 
+  "30064771640" -> "30064771641" 
+  "30064771640" -> "30064771643" 
+  "30064771641" -> "30064771642" 
+  "30064771641" -> "90194313344" 
+  "30064771642" -> "68719477243" 
+  "30064771642" -> "55834574992" 
+  "30064771643" -> "68719477244" 
+  "30064771644" -> "68719477245" 
+  "30064771644" -> "55834574993" 
+  "146028888116" -> "30064771645" 
+  "30064771645" -> "90194313345" 
+  "146028888117" -> "90194313346" 
+}

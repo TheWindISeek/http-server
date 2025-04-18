@@ -13,15 +13,15 @@ set(SRC_DIR src)
 set(TEST_DIR test)
 
 add_executable(SimpleHttpServer
-    ${SRC_DIR}/main.cc
-    ${SRC_DIR}/http_server.cc
-    ${SRC_DIR}/http_message.cc
+    ${SRC_DIR}/main.cpp
+    ${SRC_DIR}/http_server.cpp
+    ${SRC_DIR}/http_message.cpp
 )
 
 add_executable(test_SimpleHttpServer
-    ${TEST_DIR}/main.cc
-    ${SRC_DIR}/http_server.cc
-    ${SRC_DIR}/http_message.cc
+    ${TEST_DIR}/main.cpp
+    ${SRC_DIR}/http_server.cpp
+    ${SRC_DIR}/http_message.cpp
 )
 
 target_link_libraries(SimpleHttpServer PRIVATE Threads::Threads)
